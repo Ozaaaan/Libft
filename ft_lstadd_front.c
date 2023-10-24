@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 14:35:25 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/24 19:50:45 by ozdemir          ###   ########.fr       */
+/*   Created: 2023/10/24 16:47:39 by ozdemir           #+#    #+#             */
+/*   Updated: 2023/10/24 19:52:43 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	write(fd, &c, 1);
+	if (!new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	new->next = *lst;
+	*lst = new;
 }
-/*
-int	main(void)
-{
-	char c = 'A'; // Caractère que vous souhaitez écrire
-	int fd = 1;   // Utilisez 1 pour la sortie standard (stdout)
-
-	ft_putchar_fd(c, fd);
-
-	return (0);
-}*/

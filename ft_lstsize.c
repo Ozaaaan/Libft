@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 15:45:22 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/24 19:49:53 by ozdemir          ###   ########.fr       */
+/*   Created: 2023/10/24 16:35:38 by ozdemir           #+#    #+#             */
+/*   Updated: 2023/10/24 19:51:22 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
-	size_t	d;
-	size_t	s;
+	int	i;
 
-	d = ft_strlen(dest);
-	s = ft_strlen(src);
-	if (!src)
-		return (d);
-	if (size == 0 || size <= d)
-		return (s + size);
 	i = 0;
-	while (src[i] && d + i < size - 1)
+	while (lst)
 	{
-		dest[d + i] = src[i];
 		i++;
+		lst = lst->next;
 	}
-	dest[d + i] = '\0';
-	return (d + s);
+	return (i);
 }
-/*
-int main (void)
-{
-	char src[] = "Demir";
-		char dest[] = "Ozan";
-	printf("%s \n", ft_strlcat(dest, src, 20));
-	printf("%s \n", dest);
-}*/

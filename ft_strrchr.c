@@ -6,12 +6,11 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:23:26 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/20 17:32:40 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:49:30 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -36,7 +35,7 @@ int	main(void)
 	const char *str = "Hello, World!";
 	int c = 'o';
 
-	char *result = ft_strchr(str, c);
+	char *result = ft_strrchr(str, c);
 	if (result != NULL)
 	{
 		printf("Le caractère '%c' a été trouvé à la position : %ld\n", c,

@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 14:35:25 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/24 19:50:45 by ozdemir          ###   ########.fr       */
+/*   Created: 2023/10/24 17:58:46 by ozdemir           #+#    #+#             */
+/*   Updated: 2023/10/24 20:03:22 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	write(fd, &c, 1);
+	if (!lst)
+		return ;
+	if (del)
+		del(lst->content);
+	free(lst);
 }
 /*
 int	main(void)
 {
-	char c = 'A'; // Caractère que vous souhaitez écrire
-	int fd = 1;   // Utilisez 1 pour la sortie standard (stdout)
+	// Crée un élément de liste avec du contenu
+	t_list *new_node = (t_list *)malloc(sizeof(t_list));
+	new_node->content = (void *)ft_strdup("Hello, World");
+		// Duplication d'une chaîne statique pour l'exemple
+	new_node->next = NULL;
 
-	ft_putchar_fd(c, fd);
+	// Utilise ft_lstdelone pour supprimer l'élément (avec del étant NULL)
+	ft_lstdelone(new_node, NULL);
 
 	return (0);
 }*/

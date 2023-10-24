@@ -6,15 +6,13 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:01:41 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/24 14:12:33 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:50:15 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int	countwords(char *s, char c)
+static int	countwords(char *s, char c)
 {
 	int	count;
 	int	i;
@@ -30,7 +28,7 @@ int	countwords(char *s, char c)
 	return (count);
 }
 
-char	*ft_word(char *s, char c)
+static char	*ft_word(char *s, char c)
 {
 	char	*tab;
 	int		wlen;

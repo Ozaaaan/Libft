@@ -6,13 +6,11 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:32:21 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/24 13:33:08 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:49:27 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 static int	is_a_sep(const char *set, char c)
 {
@@ -43,7 +41,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 		size--;
 		s1--;
 	}
-	dest = (char *)malloc(sizeof(char) * (size));
+	dest = (char *)malloc(sizeof(char) * (size + 1));
 	if (!dest)
 		return (NULL);
 	i = 0;

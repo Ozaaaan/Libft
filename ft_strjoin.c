@@ -6,13 +6,11 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 08:39:18 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/20 16:40:13 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:49:57 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {

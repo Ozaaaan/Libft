@@ -6,13 +6,11 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:39:25 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/20 08:30:35 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:49:46 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
 
 size_t	ft_strlen(const char *s)
 {

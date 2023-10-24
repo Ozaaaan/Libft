@@ -6,13 +6,11 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:15:20 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/20 16:57:26 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:50:03 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 char	*ft_strdup(const char *str)
 {

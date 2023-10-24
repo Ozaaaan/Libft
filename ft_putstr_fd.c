@@ -6,13 +6,11 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:37:37 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/23 15:04:51 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:50:34 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <fcntl.h>
-#include <unistd.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {

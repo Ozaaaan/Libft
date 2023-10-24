@@ -6,12 +6,11 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:40:44 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/20 08:30:35 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:49:49 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {

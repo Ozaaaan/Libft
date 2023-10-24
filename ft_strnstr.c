@@ -6,12 +6,11 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:08:13 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/20 18:13:06 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:49:34 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {

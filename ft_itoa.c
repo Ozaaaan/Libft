@@ -6,15 +6,13 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:04:22 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/24 13:51:52 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:51:42 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int	count_nb(int n)
+static int	count_nb(int n)
 {
 	int	i;
 

@@ -6,12 +6,11 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 12:36:47 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/20 08:30:31 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:51:09 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

@@ -6,12 +6,11 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:49:49 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/23 15:04:44 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:50:41 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {

@@ -6,13 +6,11 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:26:27 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/20 08:30:25 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:52:04 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void	ft_bzero(void *s, size_t n)
 {

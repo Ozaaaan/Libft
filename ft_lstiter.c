@@ -1,28 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 14:35:25 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/24 19:50:45 by ozdemir          ###   ########.fr       */
+/*   Created: 2023/10/24 18:56:39 by ozdemir           #+#    #+#             */
+/*   Updated: 2023/10/24 19:29:42 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+void	add_one(void *i)
+{
+	*(int *)i += 1;
+}*/
+
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	write(fd, &c, 1);
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
 /*
+#include <assert.h>
+
 int	main(void)
 {
-	char c = 'A'; // Caractère que vous souhaitez écrire
-	int fd = 1;   // Utilisez 1 pour la sortie standard (stdout)
+	t_list  *lst;
+	int     a;
+	int     b;
 
-	ft_putchar_fd(c, fd);
+	a = 1;
+	b = 2;
+	lst = ft_lstnew(&a);
+	ft_lstadd_back(&lst, ft_lstnew(&b));
 
+	ft_lstiter(lst, add_one);
+	assert(*(int *)lst->content == 2);
+	assert(*(int *)lst->next->content == 3);
 	return (0);
 }*/
