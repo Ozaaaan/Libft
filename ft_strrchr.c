@@ -6,7 +6,7 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:23:26 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/24 19:49:30 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/25 14:32:18 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ char	*ft_strrchr(const char *s, int c)
 	res = NULL;
 	while (*s)
 	{
-		if ((unsigned char *)*s == (unsigned char)c)
+		if ((unsigned char)*s == (unsigned char)c)
 			res = s;
 		s++;
 	}
-	if ((unsigned char *)*s == (unsigned char)c)
+	if ((unsigned char)*s == (unsigned char)c)
 		res = s;
 	if (res != NULL)
-		return (res);
+		return ((char *)(res));
 	return (NULL);
 }
 /*

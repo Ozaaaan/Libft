@@ -6,81 +6,91 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:01:41 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/24 19:50:15 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/25 13:52:33 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	countwords(char *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	count;
-	int	i;
+	int	in_substring;
 
-	i = 0;
+	in_substring = 0;
 	count = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == c || s[i + 1] == '\0')
+		if (in_substring && *s == c)
+			in_substring = 0;
+		if (!in_substring && *s != c)
+		{
+			in_substring = 1;
 			count++;
-		i++;
+		}
+		s++;
 	}
 	return (count);
 }
 
-static char	*ft_word(char *s, char c)
+static int	word_length(char const *s, char c)
 {
-	char	*tab;
-	int		wlen;
-	int		i;
+	int	len;
 
-	wlen = 0;
-	while (s[wlen] != c)
-		wlen++;
-	tab = malloc(sizeof(char) * wlen + 1);
-	if (!tab)
-		return (NULL);
-	i = 0;
-	while (i < wlen)
+	len = 0;
+	while (*s != c && *s)
 	{
-		tab[i] = s[i];
-		i++;
+		len++;
+		s++;
 	}
-	tab[i] = '\0';
-	return (tab);
+	return (len);
 }
 
-char	**ft_split(const char *s, char c)
+static void	*leak_free(char **result, int words)
 {
-	char	**tab;
-	char	*str;
+	int	i;
+
+	i = 0;
+	while (i < words)
+	{
+		free(result[i]);
+		i++;
+	}
+	free(result);
+	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+	int		words;
 	int		i;
 
-	i = 1;
-	str = (char *)s;
-	tab = malloc(sizeof(char *) * (countwords(str, c) + 1));
-	if (!tab)
+	if (!s)
 		return (NULL);
-	while (*str)
+	words = count_words(s, c);
+	result = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (i < words)
 	{
-		if (*str != '\0')
-		{
-			tab[i] = ft_word(str, c);
-			i++;
-		}
-		while (*str && *str != c)
-			str++;
-		while (*str && *str == c)
-			str++;
+		while (*s == c)
+			s++;
+		result[i] = ft_substr(s, 0, word_length(s, c));
+		if (!result[i])
+			return (leak_free(result, i));
+		s += word_length(s, c);
+		i++;
 	}
-	tab[i] = 0;
-	return (tab);
+	result[i] = NULL;
+	return (result);
 }
 /*
 int	main(void)
 {
-	char s[] = "plus,msmc,ou,an94";
-	char c = ',';
+	char s[] = "Tripouille";
+	char c = ' ';
 
 	char **result = ft_split(s, c);
 
@@ -101,9 +111,6 @@ int	main(void)
 		free(result);
 	}
 	else
-	{
 		printf("Memory allocation failed.\n");
-	}
-
 	return (0);
 }*/

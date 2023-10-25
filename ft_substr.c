@@ -6,7 +6,7 @@
 /*   By: ozdemir <ozdemir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 08:35:46 by ozdemir           #+#    #+#             */
-/*   Updated: 2023/10/24 19:49:22 by ozdemir          ###   ########.fr       */
+/*   Updated: 2023/10/25 14:30:49 by ozdemir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	char	*res;
+	char	*sub_str;
+	size_t	s_len;
 
 	if (!s)
 		return (NULL);
-	res = ft_strlen(s);
-	if (start >= res)
+	s_len = ft_strlen(s);
+	if (start >= s_len)
 		return (ft_strdup(""));
 	if (ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);
-	res = malloc(sizeof(char) * (len + 1));
-	if (!res)
+	sub_str = malloc(sizeof(char) * (len + 1));
+	if (!sub_str)
 		return (NULL);
-	ft_strlcpy(res, s + start, len + 1);
-	return (res);
+	ft_strlcpy(sub_str, s + start, len + 1);
+	return (sub_str);
 }
 /*
 int	main(void)
